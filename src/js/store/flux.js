@@ -5,7 +5,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         actions: {
             userExists: async () => {
-                try {
                     const resp = await fetch("https://playground.4geeks.com/contact/agendas/Tgodwin94", {
                         method: "GET",
                         headers: {
@@ -16,13 +15,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         return false;
                     }
                     return resp.ok;
-                } catch (error) {
-                    console.error("Error checking user existence:", error);
-                    return false;
                 }
             },
             createUser: async () => {
-                try {
                     const resp = await fetch("https://playground.4geeks.com/contact/agendas/Tgodwin94", {
                         method: "POST",
                         headers: {
@@ -38,13 +33,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                         throw new Error(`error status: ${resp.status}`);
                     }
-                } catch (error) {
-                    console.error("Error creating user:", error);
-                }
             },
             getContacts: async () => {
                 const actions = getActions();
-                try {
                     const exists = await actions.userExists();
                     if (!exists) {
                         await actions.createUser();
@@ -62,12 +53,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log(data);
                     setStore({ contacts: data.contacts });
                     return getStore().contacts;
-                } catch (error) {
-                    console.error("Error getting contacts:", error);
-                }
             },
             createContact: async (contact) => {
-                try {
                     const resp = await fetch("https://playground.4geeks.com/contact/agendas/Tgodwin94/contacts", {
                         method: "POST",
                         headers: {
@@ -79,12 +66,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                         throw new Error(`error status: ${resp.status}`);
                     }
                     await getActions().getContacts();
-                } catch (error) {
-                    console.error("Error creating contact:", error);
-                }
             },
             deleteContact: async (id) => {
-                try {
                     const resp = await fetch(`https://playground.4geeks.com/contact/agendas/Tgodwin94/contacts/${id}`, {
                         method: "DELETE",
                         headers: {
@@ -95,12 +78,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                         throw new Error(`error status: ${resp.status}`);
                     }
                     await getActions().getContacts();
-                } catch (error) {
-                    console.error("Error deleting contact:", error);
-                }
             },
             updateContact: async (id, updatedContact) => {
-                try {
                     const resp = await fetch(`https://playground.4geeks.com/contact/agendas/Tgodwin94/contacts/${id}`, {
                         method: "PUT",
                         headers: {
@@ -112,10 +91,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                         throw new Error(`Error status: ${resp.status}`);
                     }
                     await getActions().getContacts();
-                } catch (error) {
-                    console.error("Error updating contact:", error);
-                }
-            }
         }
     };
 };
