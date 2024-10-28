@@ -1,3 +1,92 @@
-/* 
-    General Styles
-*/
+img {
+    width: 150px;
+    height: 150px;
+    margin-top: 25px;
+}
+
+body {
+    background-image: linear-gradient(rgb(100, 100, 255), rgb(150, 150, 255), rgb(100, 100, 255), rgb(150, 150, 255))
+}
+
+.footer {
+    font-weight: bold;
+}
+
+.code {
+    color: blue;
+}
+
+.me {
+    color: red;
+}
+
+.react {
+    color: lightskyblue;
+}
+
+.context {
+    color: green;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    margin: 20px 0px 0px 20px;
+}
+
+.btn {
+    border: 1px solid black;
+    margin: 10px 5px 0px 0px;
+    box-shadow: 2px 2px 1px 1px black;
+    font-weight: bold;
+}
+
+.btn:active {
+    border: 1px solid black;
+    margin: 10px 5px 0px 0px;
+    box-shadow: 2px 2px 1px 1px black;
+    font-weight: bold;
+    transform: translateY(2px)
+}
+
+.editDelete {
+    margin-top: 40px;
+}
+
+.editDelete .btn:first-child {
+    background-image: linear-gradient(to bottom right, gold, rgb(255, 230, 100), gold, rgb(255, 230, 100), gold, rgb(255, 230, 100))
+}
+
+.editDelete .btn:nth-child(2) {
+    background-image: linear-gradient(to bottom right, grey, rgb(180, 180, 180),grey, rgb(180, 180, 180),grey, rgb(180, 180, 180))
+
+}
+
+.navbar .btn {
+    background-image: linear-gradient(to bottom right, green, rgb(40, 190, 40), green, rgb(40, 190, 40));
+}
+
+.list-group-item {
+    margin-top: 10px;
+    box-shadow: 4px 4px 3px 2px black;
+}
+
+.form-group {
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: bold;
+    background: #D8CDFF;
+    background: linear-gradient(to bottom right, #D8CDFF 0%, #B3BACF 17%, #D8CDFF 33%, #B3BACF 50%, #D8CDFF 67%, #B3BACF 83%, #D8CDFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar {
+    border: 1px solid grey;
+}
